@@ -3,22 +3,22 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:padding="24dp"
-    android:gravity="center">
+    android:gravity="center"
+    android:padding="24dp">
 
     <TextView
-        android:id="@+id/tvStatus"
+        android:id="@+id/statusText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Initializing..."
-        android:textSize="18sp"
+        android:text="Proxmark3 Native Engine Ready!"
+        android:textSize="16sp"
         android:gravity="center"
-        android:layout_marginBottom="24dp"/>
+        android:layout_marginBottom="24dp" />
 
     <Button
-        android:id="@+id/btnTest"
+        android:id="@+id/checkBtn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Check USB Devices"/>
+        android:text="CHECK USB DEVICES" />
 
 </LinearLayout>
