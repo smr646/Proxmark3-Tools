@@ -29,7 +29,9 @@ jobs:
       run: |
         wget -q https://services.gradle.org/distributions/gradle-8.0-bin.zip
         unzip -q gradle-8.0-bin.zip
+        sudo rm -rf /opt/gradle
         sudo mv gradle-8.0 /opt/gradle
+        sudo rm -f /usr/bin/gradle
         sudo ln -s /opt/gradle/gradle-8.0/bin/gradle /usr/bin/gradle
         gradle --version
 
