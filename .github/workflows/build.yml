@@ -29,12 +29,12 @@ jobs:
       run: |
         wget -q https://services.gradle.org/distributions/gradle-8.0-bin.zip
         unzip -q gradle-8.0-bin.zip
+        sudo rm -rf /opt/gradle
         sudo mv gradle-8.0 /opt/gradle
-        echo "/opt/gradle/gradle-8.0/bin" >> $GITHUB_PATH
-        gradle --version
+        /opt/gradle/gradle-8.0/bin/gradle --version
 
     - name: Build Debug APK
-      run: gradle assembleDebug --info
+      run: /opt/gradle/gradle-8.0/bin/gradle assembleDebug --stacktrace
 
     - name: Upload APK Artifact
       uses: actions/upload-artifact@v4
