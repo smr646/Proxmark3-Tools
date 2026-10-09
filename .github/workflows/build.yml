@@ -25,16 +25,16 @@ jobs:
         echo "ANDROID_SDK_ROOT=/usr/local/lib/android/sdk" >> $GITHUB_ENV
         echo "sdk.dir=/usr/local/lib/android/sdk" > local.properties
 
-    - name: Install Gradle 8.0 Manually
+    - name: Install Gradle 7.5 Manually
       run: |
-        wget -q https://services.gradle.org/distributions/gradle-8.0-bin.zip
-        unzip -q gradle-8.0-bin.zip
+        wget -q https://services.gradle.org/distributions/gradle-7.5-bin.zip
+        unzip -q gradle-7.5-bin.zip
         sudo rm -rf /opt/gradle
-        sudo mv gradle-8.0 /opt/gradle
-        /opt/gradle/gradle-8.0/bin/gradle --version
+        sudo mv gradle-7.5 /opt/gradle
+        /opt/gradle/gradle-7.5/bin/gradle --version
 
     - name: Build Debug APK
-      run: /opt/gradle/gradle-8.0/bin/gradle assembleDebug --stacktrace
+      run: /opt/gradle/gradle-7.5/bin/gradle assembleDebug --stacktrace
 
     - name: Upload APK Artifact
       uses: actions/upload-artifact@v4
