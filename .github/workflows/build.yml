@@ -30,11 +30,12 @@ jobs:
         wget -q https://services.gradle.org/distributions/gradle-7.5-bin.zip
         unzip -q gradle-7.5-bin.zip
         sudo rm -rf /opt/gradle
-        sudo mv gradle-7.5 /opt/gradle
-        /opt/gradle/gradle-7.5/bin/gradle --version
+        sudo mkdir -p /opt/gradle
+        sudo mv gradle-7.5/* /opt/gradle/
+        /opt/gradle/bin/gradle --version
 
     - name: Build Debug APK
-      run: /opt/gradle/gradle-7.5/bin/gradle assembleDebug --stacktrace
+      run: /opt/gradle/bin/gradle assembleDebug --stacktrace
 
     - name: Upload APK Artifact
       uses: actions/upload-artifact@v4
